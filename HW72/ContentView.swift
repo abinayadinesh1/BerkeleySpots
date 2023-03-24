@@ -23,8 +23,7 @@ struct ContentView: View {
             if error != nil {
                 print(error?.localizedDescription ?? "")
             } else {
-//                UNCOMMENT THE BELOW AFTER ADDING THE VAR
-//                loggedIn = true
+//                TODO: update the variable to track that the user has successfully logged in
                 print("success")
             }
         }
