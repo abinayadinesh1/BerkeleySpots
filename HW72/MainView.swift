@@ -63,7 +63,7 @@ struct MainView: View {
             }
             
             Button(action: {updateObj()}) {
-                Text("Save")            }
+                Text("Save")}
         }.background(
             Image("grass")
                 .resizable()
