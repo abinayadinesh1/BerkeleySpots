@@ -12,6 +12,7 @@ struct MainView: View {
     @State var selectedLocation = ""
     @State var restaurantName = ""
     @State var rating = 0
+    @State var showAlert = false
     @State private var showingImagePicker = false
     @State private var inputImage = UIImage()
     
@@ -20,6 +21,12 @@ struct MainView: View {
     func updateObj() {
         let firestoreObj = FirestoreManager()
         firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName, rating: rating)
+        showAlert = true
+    }
+    func clearFields() {
+        let firestoreObj = FirestoreManager()
+        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName, rating: rating)
+        showAlert = true
     }
     
     var body: some View {
@@ -63,10 +70,21 @@ struct MainView: View {
             }
             
             Button(action: {updateObj()}) {
-                Text("Save")}
+                Text("Save")}.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Spot posted!")
+                        primaryButton: .default(
+                                        Text("Close"),
+                                        action: {
+                                            showAlert = false
+                                            clearFields()
+                                        }
+                                    ),
+                    )
+                }
         }.background(
             Image("grass")
                 .resizable()
-        )
+        ).padding(.all, 15).cornerRadius(5)
     }
 }
