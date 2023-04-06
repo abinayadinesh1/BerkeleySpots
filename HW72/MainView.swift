@@ -20,13 +20,16 @@ struct MainView: View {
 
     func updateObj() {
         let firestoreObj = FirestoreManager()
-        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName, rating: rating)
+        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName, rating: rating, image: inputImage)
         showAlert = true
     }
     func clearFields() {
-        let firestoreObj = FirestoreManager()
-        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName, rating: rating)
-        showAlert = true
+        restaurantName = ""
+        selectedLocation = ""
+        rating = 0
+        inputImage = UIImage()
+        showAlert = false
+        showingImagePicker = false
     }
     
     var body: some View {
@@ -72,14 +75,12 @@ struct MainView: View {
             Button(action: {updateObj()}) {
                 Text("Save")}.alert(isPresented: $showAlert) {
                     Alert(
-                        title: Text("Spot posted!")
-                        primaryButton: .default(
-                                        Text("Close"),
-                                        action: {
-                                            showAlert = false
-                                            clearFields()
-                                        }
-                                    ),
+                        title: Text("Spot posted!"),
+                        dismissButton: .default(Text("Close"), action: {
+                            showAlert = false
+                            clearFields()
+
+                        })
                     )
                 }
         }.background(
