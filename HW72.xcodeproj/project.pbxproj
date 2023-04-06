@@ -34,6 +34,7 @@
 		6E1FE7C929CA8115007E5853 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1FE7C829CA8115007E5853 /* MainView.swift */; };
 		6E1FE7CB29CA8C62007E5853 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1FE7CA29CA8C62007E5853 /* ImagePicker.swift */; };
 		6E84BD1429CAB405000FF1DA /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84BD1329CAB405000FF1DA /* FirestoreManager.swift */; };
+		6EB77B6129DF85750082F84B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB77B6029DF85750082F84B /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		6E1FE7C829CA8115007E5853 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6E1FE7CA29CA8C62007E5853 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6E84BD1329CAB405000FF1DA /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		6EB77B6029DF85750082F84B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				6E1FE7C829CA8115007E5853 /* MainView.swift */,
 				6E1FE7CA29CA8C62007E5853 /* ImagePicker.swift */,
 				6E84BD1329CAB405000FF1DA /* FirestoreManager.swift */,
+				6EB77B6029DF85750082F84B /* AddView.swift */,
 			);
 			path = HW72;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				6E1FE77C29CA74ED007E5853 /* ContentView.swift in Sources */,
 				6E84BD1429CAB405000FF1DA /* FirestoreManager.swift in Sources */,
+				6EB77B6129DF85750082F84B /* AddView.swift in Sources */,
 				6E1FE7CB29CA8C62007E5853 /* ImagePicker.swift in Sources */,
 				6E1FE7C929CA8115007E5853 /* MainView.swift in Sources */,
 				6E1FE77A29CA74ED007E5853 /* HW72App.swift in Sources */,

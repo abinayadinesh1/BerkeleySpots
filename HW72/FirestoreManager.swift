@@ -18,7 +18,7 @@ class FirestoreManager: ObservableObject {
     let db = Firestore.firestore() //make a new database instance
     let storage = Storage.storage() //make a new storage instance - only needed for images!
     
-    func create(selectedLocation: String, restaurantName: String, rating: Int, image: UIImage) {
+    func create(selectedLocation: String, restaurantName: String, rating: Int) {
         
         // format our data as a list
         let docData: [String: Any] = [
@@ -38,21 +38,6 @@ class FirestoreManager: ObservableObject {
         locations_collection.document(id).setData(docData) {error in
             if let error = error {
                 print("Error writing document \(error)")
-            } else {
-                print("Document successfully written!")
-            }
-        }
-        
-        // IMAGE STUFF
-        let imageData: Data = image.jpegData(compressionQuality: 0.2)!
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/png"
-        let ref = storage.reference().child("images/image.jpg")
-
-
-        ref.putData(imageData, metadata: metadata) { (metadata, error) in
-            if let error = error {
-                print("Error uploading image \(error)")
             } else {
                 print("Document successfully written!")
             }
@@ -80,6 +65,22 @@ class FirestoreManager: ObservableObject {
     
     
     //TODO: use the example in the slides to make a function that gets a snapshot of all the data in our collection and iterates through that data
-//        .listAll?
+    func readAll(db: Firestore) {
+        let ref = db.collection("Locations")
+        ref.getDocuments {snapshot, error in
+            if let err = error {
+                print(err.localizedDescription)
+                return
+            }
+            if let snap = snapshot {
+                for doc in snap.documents {
+                    let data = doc.data()
+                    let location = data["selected location"] as? String ?? ""
+                    let restaurantName = data["restaurant name"] as? String ?? ""
+                    let rating = data["rating"] as? String ?? ""
+                }
+            }
+        }
+    }
     
 }

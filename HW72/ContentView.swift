@@ -31,7 +31,14 @@ struct ContentView: View {
 
     var body: some View {
         if loggedIn {
-            MainView()
+            TabView {
+                MainView().tabItem {
+                    Label("Spots", systemImage: "takeoutbag.and.cup.and.straw.fill")
+                }
+                AddView().tabItem {
+                    Label("Add New Spot", systemImage: "plus.circle")
+                }
+            }
         } else {
             TextField("Email", text: $email).textFieldStyle(.roundedBorder).multilineTextAlignment(.center)
             TextField("Password", text: $password).textFieldStyle(.roundedBorder).multilineTextAlignment(.center)
