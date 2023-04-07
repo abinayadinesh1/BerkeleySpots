@@ -7,21 +7,23 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 import UIKit
+import SwiftUI
 
 
 class FirestoreManager: ObservableObject {
-    // Today, we will only be using CR of CRUD: create and read. In a future implementation, or just for fun, you can try implementing -UD!
+    // Today, we'll finish our implenentation of CRUS with -UD! You'll see the solutions for CR- already here.
     
     let db = Firestore.firestore() //make a new database instance
+    let storage = Storage.storage() //make a new storage instance - only needed for images!
     
-    func create(selectedLocation: String, restaurantName: String, rating: Int) {
+    func create(selectedLocation: String, restaurantName: String) {
         
         // format our data as a list
         let docData: [String: Any] = [
             "selected location": selectedLocation,
             "restaurant name": restaurantName,
-            "rating": rating,
         ]
         
         // specify the collection we would like to populate. every time we add a new 'spot', we want to add to this collection.
@@ -29,7 +31,7 @@ class FirestoreManager: ObservableObject {
         
         //make an id for the object; this could be anything unique to the data (like the restaurant name), but since two people can make two entries for the same restaurant name, we are using UUID to generate a unique id
         let id: String = UUID().uuidString
-                
+            
         //use the firebase .setData function to upload our docData into the specified collection
         // catch any errors that may be found in the result
         locations_collection.document(id).setData(docData) {error in
@@ -40,11 +42,10 @@ class FirestoreManager: ObservableObject {
             }
         }
     }
-    
-    
+
+
     
     func read(docID: String){
-        //TODO: implement this yourself using the example in the slides!
         let db = Firestore.firestore()
         // define the collection you want to read from
         let locations_collection = db.collection("Locations")
@@ -57,9 +58,27 @@ class FirestoreManager: ObservableObject {
                 print("document does not exist")
             }
         }
-        // use the right function to get a swift dictionary of our data
     }
     
+    
+    
     //TODO: use the example in the slides to make a function that gets a snapshot of all the data in our collection and iterates through that data
+    func readAll(db: Firestore) {
+        let ref = db.collection("Locations")
+        ref.getDocuments {snapshot, error in
+            if let err = error {
+                print(err.localizedDescription)
+                return
+            }
+            if let snap = snapshot {
+                for doc in snap.documents {
+                    let data = doc.data()
+                    let location = data["selected location"] as? String ?? ""
+                    let restaurantName = data["restaurant name"] as? String ?? ""
+                    let rating = data["rating"] as? String ?? ""
+                }
+            }
+        }
+    }
     
 }
