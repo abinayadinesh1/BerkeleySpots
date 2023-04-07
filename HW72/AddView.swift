@@ -11,20 +11,20 @@ import PhotosUI
 struct AddView: View {
     @State var selectedLocation = ""
     @State var restaurantName = ""
-    @State var rating = 0
     @State var showAlert = false
     
     let locations = ["North", "South", "Uphill", "South Berkeley", "Elmwood"]
 
     func updateObj() {
         let firestoreObj = FirestoreManager()
-        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName, rating: rating)
+        // TODO: create a new Firestore Object
+        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName)
         showAlert = true
     }
+    //TODO: reset the inputted values within this function
     func clearFields() {
         restaurantName = ""
         selectedLocation = ""
-        rating = 0
         showAlert = false
     }
     
@@ -45,7 +45,6 @@ struct AddView: View {
                         }
                     }.scaleEffect(1.5)
                 }.pickerStyle(.menu)
-                TextField("How much did you enjoy it out of 10?", value: $rating, format: .number).font(.title2).multilineTextAlignment(.center)
                     Button(action: {updateObj()}) {
                         Text("Save")}.background(.blue).font(.title3)
                     .frame(width: 70, height: 30).cornerRadius(10).alert(isPresented: $showAlert) {
@@ -54,7 +53,6 @@ struct AddView: View {
                                 dismissButton: .default(Text("Close"), action: {
                                     showAlert = false
                                     clearFields()
-                                    
                                 })
                             )
                         }

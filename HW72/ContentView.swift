@@ -10,44 +10,21 @@ import Firebase
 import FirebaseCore
 
 struct ContentView: View {
-    @State var email = ""
-    @State var password = ""
-    @State var loggedIn = true
-    
     init() {
-        FirebaseApp.configure()
-    }
-    
-    func login() {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if error != nil {
-                print(error?.localizedDescription ?? "")
-            } else {
-                loggedIn = true
-                print("success")
-            }
-        }
-    }
-
+           FirebaseApp.configure()
+       }
+       
     var body: some View {
-        if loggedIn {
-            TabView {
-                MainView().tabItem {
-                    Label("Spots", systemImage: "takeoutbag.and.cup.and.straw.fill")
-                }
-                AddView().tabItem {
-                    Label("Add New Spot", systemImage: "plus.circle")
-                }
+        
+        TabView {
+            AddView().tabItem {
+                Label("Add New Spot", systemImage: "plus.circle")
             }
-        } else {
-            TextField("Email", text: $email).textFieldStyle(.roundedBorder).multilineTextAlignment(.center)
-            TextField("Password", text: $password).textFieldStyle(.roundedBorder).multilineTextAlignment(.center)
-
-            Button(action: { login() }){
-                     Text("Sign in")
-                 }.buttonStyle(. bordered).tint(.mint)
+            MainView().tabItem {
+                Label("Spots", systemImage: "takeoutbag.and.cup.and.straw.fill")
             }
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

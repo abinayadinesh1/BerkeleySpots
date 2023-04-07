@@ -18,13 +18,12 @@ class FirestoreManager: ObservableObject {
     let db = Firestore.firestore() //make a new database instance
     let storage = Storage.storage() //make a new storage instance - only needed for images!
     
-    func create(selectedLocation: String, restaurantName: String, rating: Int) {
+    func create(selectedLocation: String, restaurantName: String) {
         
         // format our data as a list
         let docData: [String: Any] = [
             "selected location": selectedLocation,
             "restaurant name": restaurantName,
-            "rating": rating,
         ]
         
         // specify the collection we would like to populate. every time we add a new 'spot', we want to add to this collection.
@@ -59,7 +58,6 @@ class FirestoreManager: ObservableObject {
                 print("document does not exist")
             }
         }
-        // use the right function to get a swift dictionary of our data
     }
     
     

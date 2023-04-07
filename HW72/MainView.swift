@@ -25,9 +25,7 @@ struct MainView: View {
                     let data = doc.data()
                     let restaurantName = data["restaurant name"] as? String ?? ""
                     let location = data["selected location"] as? String ?? ""
-                    let rating = data["rating"] as? String ?? ""
-                    
-                    allSpots.append("Restaurant Name: \(restaurantName) \n Location: \(location) \n Rating: \(rating)")
+                    allSpots.append("Restaurant Name: \(restaurantName) \n Location: \(location)")
                 }
             }
         }
