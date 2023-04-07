@@ -12,24 +12,8 @@ struct MainView: View {
     let database = Firestore.firestore()
     @State var allSpots = [String]()
     
-    func readAll(db: Firestore) {
-        let ref = db.collection("Locations")
-        ref.getDocuments {snapshot, error in
-            if let err = error {
-                print(err.localizedDescription)
-                return
-            }
-            if let snap = snapshot {
-                for doc in snap.documents {
-
-                    let data = doc.data()
-                    let restaurantName = data["restaurant name"] as? String ?? ""
-                    let location = data["selected location"] as? String ?? ""
-                    allSpots.append("Restaurant Name: \(restaurantName) \n Location: \(location)")
-                }
-            }
-        }
-    }
+    //TODO: create and implement the function readAll() as shown in the slides.
+    // take a peek at FirestoreManager.swift, specifically lines 24-27 for reference on what variables we have
 
 
     var body: some View {
@@ -44,7 +28,7 @@ struct MainView: View {
                     Divider()
                 }
             }.padding(.top, 30).onAppear {
-                readAll(db: database)
+                //TODO: call the readAll function here
         }
         }
 

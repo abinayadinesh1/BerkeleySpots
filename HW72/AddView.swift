@@ -17,14 +17,12 @@ struct AddView: View {
 
     func updateObj() {
         let firestoreObj = FirestoreManager()
-        // TODO: create a new Firestore Object
-        firestoreObj.create(selectedLocation: selectedLocation, restaurantName: restaurantName)
+        // TODO: create a new Firestore Object (1 line)
         showAlert = true
     }
-    //TODO: reset the inputted values within this function
+
     func clearFields() {
-        restaurantName = ""
-        selectedLocation = ""
+        //TODO: reset the inputted values within this function (2 lines)
         showAlert = false
     }
     

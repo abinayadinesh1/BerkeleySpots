@@ -13,9 +13,8 @@ struct ContentView: View {
     init() {
            FirebaseApp.configure()
        }
-       
+    
     var body: some View {
-        
         TabView {
             AddView().tabItem {
                 Label("Add New Spot", systemImage: "plus.circle")
