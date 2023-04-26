@@ -30,9 +30,8 @@
 		6E1FE7C129CA769B007E5853 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1FE7C029CA769B007E5853 /* FirebaseMessaging */; };
 		6E1FE7C329CA769B007E5853 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1FE7C229CA769B007E5853 /* FirebaseStorage */; };
 		6E1FE7C529CA769B007E5853 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1FE7C429CA769B007E5853 /* FirebaseStorageCombine-Community */; };
-		6E1FE7C729CA7D6D007E5853 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FE7C629CA7D6D007E5853 /* GoogleService-Info.plist */; };
 		6E1FE7C929CA8115007E5853 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1FE7C829CA8115007E5853 /* MainView.swift */; };
-		6E1FE7CB29CA8C62007E5853 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1FE7CA29CA8C62007E5853 /* ImagePicker.swift */; };
+		6E476EE229F9BA2B00295E9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E476EE129F9BA2B00295E9D /* GoogleService-Info.plist */; };
 		6E84BD1429CAB405000FF1DA /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84BD1329CAB405000FF1DA /* FirestoreManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,9 +63,8 @@
 		6E1FE79029CA74F0007E5853 /* HW72UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HW72UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1FE79429CA74F0007E5853 /* HW72UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW72UITests.swift; sourceTree = "<group>"; };
 		6E1FE79629CA74F0007E5853 /* HW72UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW72UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6E1FE7C629CA7D6D007E5853 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E1FE7C829CA8115007E5853 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		6E1FE7CA29CA8C62007E5853 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		6E476EE129F9BA2B00295E9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E84BD1329CAB405000FF1DA /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,13 +132,12 @@
 		6E1FE77829CA74ED007E5853 /* HW72 */ = {
 			isa = PBXGroup;
 			children = (
-				6E1FE7C629CA7D6D007E5853 /* GoogleService-Info.plist */,
+				6E476EE129F9BA2B00295E9D /* GoogleService-Info.plist */,
 				6E1FE77929CA74ED007E5853 /* HW72App.swift */,
 				6E1FE77B29CA74ED007E5853 /* ContentView.swift */,
 				6E1FE77D29CA74EF007E5853 /* Assets.xcassets */,
 				6E1FE77F29CA74EF007E5853 /* Preview Content */,
 				6E1FE7C829CA8115007E5853 /* MainView.swift */,
-				6E1FE7CA29CA8C62007E5853 /* ImagePicker.swift */,
 				6E84BD1329CAB405000FF1DA /* FirestoreManager.swift */,
 			);
 			path = HW72;
@@ -297,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E1FE78129CA74EF007E5853 /* Preview Assets.xcassets in Resources */,
-				6E1FE7C729CA7D6D007E5853 /* GoogleService-Info.plist in Resources */,
+				6E476EE229F9BA2B00295E9D /* GoogleService-Info.plist in Resources */,
 				6E1FE77E29CA74EF007E5853 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +322,6 @@
 			files = (
 				6E1FE77C29CA74ED007E5853 /* ContentView.swift in Sources */,
 				6E84BD1429CAB405000FF1DA /* FirestoreManager.swift in Sources */,
-				6E1FE7CB29CA8C62007E5853 /* ImagePicker.swift in Sources */,
 				6E1FE7C929CA8115007E5853 /* MainView.swift in Sources */,
 				6E1FE77A29CA74ED007E5853 /* HW72App.swift in Sources */,
 			);
